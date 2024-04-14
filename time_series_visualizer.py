@@ -15,13 +15,12 @@ df = df.loc[(df['value'] >= df['value'].quantile(0.025)) & (df['value'] <= df['v
 def draw_line_plot():
     
     # Draw line plot
-    fig, ax = plt.subplots(figsize=(32, 10), dpi=100)
+    fig, ax = plt.subplots(figsize=(30, 8), dpi=100)
     
     ax.set_title("Daily freeCodeCamp Forum Page Views 5/2016-12/2019")
     ax.set_xlabel("Date")
     ax.set_ylabel("Page Views")
     sns.lineplot(data=df, legend=False, palette=['r'])
-
 
     # Save image and return fig (don't change this part)
     fig.savefig('line_plot.png')
@@ -39,11 +38,11 @@ def draw_bar_plot():
     df_bar.columns = ['January','February','March','April','May','June','July','August','September','October','November','December']
     
     # Draw bar plot
-    fig = df_bar.plot(kind = 'bar', figsize = (15,10)).figure
+    fig = df_bar.plot(kind = 'bar', figsize = (15,8)).figure
   
-    plt.xlabel('Years', fontsize = 15)
-    plt.ylabel('Average Page Views', fontsize = 15)
-    plt.legend(loc = 'upper left', title = 'Months', fontsize = 13)
+    plt.xlabel('Years')
+    plt.ylabel('Average Page Views')
+    plt.legend(loc = 'upper left', title = 'Months')
 
 
     # Save image and return fig (don't change this part)
